@@ -1,0 +1,4 @@
+/build
+local/config.local.json
+local/logs
+/node_modules
