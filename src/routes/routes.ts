@@ -11,6 +11,8 @@ function initRoutes(app) {
 
     helper.get('/api/message', apiController.getMessage);
 
+    helper.get('/api/items', apiController.getItems);
+
     //all other routes are rendered as home (for client side routing)
     helper.get('*', homeController.home);
 }
