@@ -1,18 +1,22 @@
 import homeController from '../controllers/homeController';
-import apiController from '../controllers/apiController';
-import helper from './routeHelper';
+import itemController from '../controllers/itemController';
 
 export default {
     init: initRoutes
 };
 
 function initRoutes(app) {
-    helper.init(app);
+    app.get('/api/message', homeController.getMessage);
 
-    helper.get('/api/message', apiController.getMessage);
-
-    helper.get('/api/items', apiController.getItems);
+    initItemRoutes(app);
 
     //all other routes are rendered as home (for client side routing)
-    helper.get('*', homeController.home);
+    app.get('*', homeController.home);
+}
+
+function initItemRoutes(app) {
+    app.get('/api/items', itemController.getItems);
+    app.post('/api/items', itemController.addItem);
+    app.put('/api/items', itemController.updateItem);
+    app.delete('/api/items', itemController.removeItem);
 }

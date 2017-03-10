@@ -19,17 +19,6 @@ function sendFailureMessage(error, res) {
         status = 'validation error';
     }
 
-    let mongooseError = _.get(error, 'response.data.error');
-    if (mongooseError) {
-        statusCode = 400;
-        message = `Schema validation error: ${mongooseError}`;
-        status = 'validation error';
-    }
-
-    if (error.isAppError) {
-        message = error.message;
-    }
-
     res.status(statusCode).send({
         status,
         message

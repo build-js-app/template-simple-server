@@ -42,19 +42,6 @@ function initExpress() {
     app.use('/static', express.static(pathHelper.getClientRelative('/static')));
 
     app.use(cors());
-
-    initSession();
-}
-
-function initSession() {
-    const cookieParser = require('cookie-parser');
-    app.use(cookieParser());
-
-    const session = require('cookie-session');
-    app.use(session({
-        secret: 'tm_app_secret_!!!',
-        maxAge: 2 * 60 * 60 * 1000 // 2 hours
-    }));
 }
 
 function initErrorHandling(app) {
