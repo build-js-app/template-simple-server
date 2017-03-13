@@ -50,7 +50,7 @@ async function updateItem(req, res) {
 
 async function removeItem(req, res) {
     try {
-        let data = await helper.loadSchema(req.body, {
+        let data = await helper.loadSchema(req.params, {
             id: Joi.number().required()
         });
 

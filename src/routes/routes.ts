@@ -18,5 +18,5 @@ function initItemRoutes(app) {
     app.get('/api/items', itemController.getItems);
     app.post('/api/items', itemController.addItem);
     app.put('/api/items', itemController.updateItem);
-    app.delete('/api/items', itemController.removeItem);
+    app.delete('/api/items/:id', itemController.removeItem);
 }
