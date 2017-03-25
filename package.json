@@ -5,6 +5,10 @@
     "start": "npm run serve",
     "serve": "nodemon --exec ts-node -- ./src/index.ts"
   },
+  "globalDependencies": {
+    "nodemon": "1.11.0",
+    "ts-node": "3.0.2"
+  },
   "dependencies": {
     "@types/fs-extra": "0.0.37",
     "@types/node": "^7.0.0",
