@@ -19,6 +19,11 @@ function sendFailureMessage(error, res) {
         status = 'validation error';
     }
 
+    if (statusCode === 500) {
+        //log unexpected errors
+        console.log(error);
+    }
+
     res.status(statusCode).send({
         status,
         message
