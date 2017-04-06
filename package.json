@@ -1,9 +1,10 @@
 {
   "name": "server",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "npm run serve",
-    "serve": "nodemon --exec ts-node -- ./src/index.ts"
+    "serve": "nodemon --watch src --exec ts-node -- ./src/index.ts"
   },
   "globalDependencies": {
     "nodemon": "1.11.0",
