@@ -38,7 +38,7 @@ function getClientRelativePath(...paths) {
     return getRelativePath('client', ...paths)
 }
 
-function getRelativePath(profileFolder, ...paths: string[]) {
+function getRelativePath(profileFolder, ...paths) {
     let folderRelative = profileData[getCurrentProfile()][profileFolder];
 
     if (!folderRelative) throw Error(`Cannot find relative folder profile '${profileFolder}'`);

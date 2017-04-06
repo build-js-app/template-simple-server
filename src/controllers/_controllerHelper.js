@@ -37,7 +37,7 @@ function sendData(data, res) {
     });
 }
 
-function loadSchema(data, schema): Promise<any> {
+function loadSchema(data, schema) {
     let validationOptions = {
         stripUnknown: true
     };

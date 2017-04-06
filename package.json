@@ -3,17 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "npm run serve",
-    "serve": "nodemon --watch src --exec ts-node -- ./src/index.ts"
+    "start": "backpack"
   },
-  "globalDependencies": {
-    "nodemon": "1.11.0",
-    "typescript": "2.2.1",
-    "ts-node": "3.0.2"
+  "devDependencies": {
+    "backpack-core": "0.2.1"
   },
   "dependencies": {
-    "@types/fs-extra": "0.0.37",
-    "@types/node": "^7.0.0",
     "body-parser": "^1.15.2",
     "cors": "^2.8.1",
     "express": "^4.14.0",
