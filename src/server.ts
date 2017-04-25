@@ -39,7 +39,7 @@ function initExpress() {
     app.use(bodyParser.json()); // get information from html forms
     app.use(bodyParser.urlencoded({extended: true}));
 
-    app.use('/', express.static(pathHelper.getClientRelative('/')));
+    app.use('/', express.static(pathHelper.getClientRelative('/'), {index: false}));
 
     app.use(cors());
 }
