@@ -9,7 +9,7 @@ let profileData = {
         client: './client'
     },
     development: {
-        root: '../../..',
+        root: '../..',
         data: './data',
         local: './local',
         client: '../client/build'
