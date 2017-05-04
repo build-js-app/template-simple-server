@@ -6,7 +6,7 @@
     "start": "backpack"
   },
   "devDependencies": {
-    "backpack-core": "0.2.1"
+    "backpack-core": "0.3.0"
   },
   "dependencies": {
     "body-parser": "^1.15.2",

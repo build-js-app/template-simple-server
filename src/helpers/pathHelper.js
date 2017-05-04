@@ -59,7 +59,9 @@ function getRootPath() {
 
     if (!rootRelative) throw Error('Cannot find root folder');
 
-    return path.join(__dirname, rootRelative);
+    let currentFolder = path.resolve(__dirname);
+
+    return path.join(currentFolder, rootRelative);
 }
 
 function getCurrentProfile(){
