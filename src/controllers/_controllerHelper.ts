@@ -1,6 +1,9 @@
 import * as _ from 'lodash';
 import * as Joi from 'joi';
 
+import config from '../config';
+import logger from '../logger';
+
 export default {
     sendData,
     sendFailureMessage,
@@ -24,10 +27,22 @@ function sendFailureMessage(error, res) {
         console.log(error);
     }
 
+    logError(error);
+
     res.status(statusCode).send({
         status,
         message
     });
+}
+
+function logError(error) {
+    if (error.isValidationError) return;
+
+    if (config.isDevLocal) {
+        console.log(error);
+    }
+
+    logger.error(error);
 }
 
 function sendData(data, res) {
