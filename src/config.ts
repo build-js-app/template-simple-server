@@ -1,4 +1,6 @@
+import * as _ from 'lodash';
 import * as fs from 'fs-extra';
+
 import pathHelper from './helpers/pathHelper';
 
 let logConfig = true;
@@ -16,23 +18,11 @@ function tryReadConfigFile(path) {
     }
 }
 
-function loadEnvVars(config) {
-    if (process.env.PARSE_SERVER_URL) {
-        config.parseServerUrl = process.env.PARSE_SERVER_URL;
-    }
-
-    if (process.env.PARSE_APP_ID) {
-        config.parseAppId = process.env.PARSE_APP_ID;
-    }
-}
-
 let defaultFile = tryReadConfigFile(pathHelper.getDataRelative('config.json'));
-Object.assign(config, defaultFile);
+_.merge(config, defaultFile);
 
 let localFile = tryReadConfigFile(pathHelper.getLocalRelative('config.local.json'));
-Object.assign(config, localFile);
-
-loadEnvVars(config);
+_.merge(config, localFile);
 
 if (logConfig) {
     console.log('App configuration:');

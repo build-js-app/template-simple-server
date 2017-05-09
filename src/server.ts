@@ -20,7 +20,7 @@ function start(port) {
 
     routes.init(app);
 
-    initErrorHandling(app);
+    initErrorHandling();
 
     if (config.isDevLocal) {
         app.use(morgan('dev'));
@@ -44,9 +44,9 @@ function initExpress() {
     app.use(cors());
 }
 
-function initErrorHandling(app) {
+function initErrorHandling() {
     //log unhandled errors
-    app.use(function (err, req, res, next) {
+    app.use((err, req, res, next) => {
         logger.error(err);
 
         console.log(err);

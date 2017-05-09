@@ -7,7 +7,7 @@ export default {
     addItem,
     updateItem,
     removeItem
-}
+};
 
 const dataPath = pathHelper.getDataRelative('data.json');
 let dataCache = null;

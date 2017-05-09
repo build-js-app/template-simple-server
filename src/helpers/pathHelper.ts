@@ -27,15 +27,15 @@ export default {
 };
 
 function getDataRelativePath(...paths) {
-    return getRelativePath('data', ...paths)
+    return getRelativePath('data', ...paths);
 }
 
 function getLocalRelativePath(...paths) {
-    return getRelativePath('local', ...paths)
+    return getRelativePath('local', ...paths);
 }
 
 function getClientRelativePath(...paths) {
-    return getRelativePath('client', ...paths)
+    return getRelativePath('client', ...paths);
 }
 
 function getRelativePath(profileFolder, ...paths: string[]) {
