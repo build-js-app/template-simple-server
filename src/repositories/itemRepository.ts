@@ -9,12 +9,17 @@ export default {
     removeItem
 };
 
-const dataPath = pathHelper.getDataRelative('data.json');
+const dataPath = pathHelper.getLocalRelative('data.json');
+const initDataPath = pathHelper.getDataRelative('data.json');
 let dataCache = null;
 
 function getData() {
     if (!dataCache) {
-        dataCache = fs.readJsonSync(dataPath);
+        if (fs.existsSync(dataPath)) {
+            dataCache = fs.readJsonSync(dataPath);
+        } else {
+            dataCache = fs.readJsonSync(initDataPath);
+        }
     }
 
     return dataCache;
